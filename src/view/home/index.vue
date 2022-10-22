@@ -13,6 +13,7 @@ export default {
     const age = ref(22)
     toRefs(num)
     console.log(num,age)
+    // xxx
   }
 }
 </script>
