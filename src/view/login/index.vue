@@ -62,7 +62,6 @@ const login = () => {
       setBtn.text = "登录";
       setBtn.loading = false;
     }
-    console.log(111);
   });
 };
 </script>
