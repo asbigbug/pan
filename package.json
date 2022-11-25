@@ -11,6 +11,7 @@
     "sass-loader": "7.3.1",
     "style-loader": "^3.3.1",
     "vue": "^3.2.38",
+    "vue-lazyload": "^3.0.0-rc.2",
     "vue-router": "4"
   },
   "devDependencies": {

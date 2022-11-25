@@ -40,9 +40,9 @@ import { defineComponent } from "@vue/runtime-core";
 defineComponent({
   components: {
     UserOutlined,
-    EyeInvisibleOutlined
-  }
-})
+    EyeInvisibleOutlined,
+  },
+});
 const ROUTER = useRouter();
 //  登录信息
 let formState = reactive({
@@ -89,10 +89,12 @@ const login = () => {
   overflow: hidden;
   background-image: url(../../static/image/login.webp);
   background-size: 100% 100%;
+  display: grid;
+  align-items: center;
+
   .getinfo {
     width: 60%;
     margin: 0 auto;
-    margin-top: 45%;
   }
   .btn {
     .ant-btn {
