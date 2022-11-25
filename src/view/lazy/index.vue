@@ -7,6 +7,6 @@ import { useRouter } from "vue-router";
 const ROUTER = useRouter();
 if (!localStorage.getItem("token")) {
   ROUTER.push({ name: "Login" });
-//   console.log(1.56);
+//   console.log(1.5622222);
 }
 </script>
