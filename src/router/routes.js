@@ -8,6 +8,7 @@ const routes = [
         path: '/login',
         component: () => import('@/view/login/index.vue')
     },
+
     {
         name: 'Lazy',
         path: '/lazy/',
@@ -15,11 +16,25 @@ const routes = [
         children: [
             {
                 name: 'Home',
-                path: 'home',
-                component: () => import('@/view/home/index.vue')
+                path: 'home/:id',
+                component: () => import('@/view/home/index.vue'),
+                props: { newsletterPopup: false }
             }
         ]
     },
-
+    {
+        name: 'Notfind',
+        path: '/404',
+        meta: {
+            title: '404'
+        },
+        component: () => import('@/view/404/index.vue'),
+    },
+    {
+        path: '/:pathMatch(.*)',
+        redirect: '/404',
+    }
 ]
+
+
 export default routes
