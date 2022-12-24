@@ -11,12 +11,13 @@
     <div>lol</div>
     <a-button @click="check"> 换肤 </a-button>
     <div class="ppp" @click="tono"></div>
+    <div class="ppp" @click="llkkkl">1231312</div>
     {{ newsletterPopup }}
   </div>
 </template>
 
-<script setup>
-import { getImage } from "@/request/requestAPI.js";
+<script setup >
+import { getImage, koaImage } from "@/request/requestAPI.js";
 import { onMounted, reactive, ref } from "@vue/runtime-core";
 import { message } from "ant-design-vue";
 import { useRoute, useRouter } from "vue-router";
@@ -38,9 +39,10 @@ getImages();
 
 // 换肤
 const check = () => {
-  document
-    .getElementsByTagName("body")[0]
-    .style.setProperty("--test", "yellow");
+  window.open("@/view/home/index.html", "_blank");
+  // document
+  //   .getElementsByTagName("body")[0]
+  //   .style.setProperty("--test", "yellow");
 };
 // 去404
 const tono = () => {
@@ -53,6 +55,33 @@ const props = defineProps({
   newsletterPopup: Boolean,
 });
 console.log(props.newsletterPopup);
+
+const llkkkl = () => {
+  koaImage({ id: 1, pl: 2 });
+};
+// 请求两秒内用请求回来的数据，否则用本地
+const pros = () => {
+  return new Promise((resolve, reject) => {
+    let time = Date.now();
+    let data = null || getImage({ id: 1 });
+    let timer = setInterval(() => {
+      let time1 = Date.now();
+      if (time1 - time < 2000) {
+        if (data) {
+          resolve(data);
+          clearInterval(timer);
+        } else {
+          reject({ ad: 111 });
+          clearInterval(timer);
+        }
+      }
+    }, 500);
+  });
+};
+pros().then((res) => {
+  console.log(res);
+});
+
 // import { vFocus } from "@/static/js/directive";
 // import { ref } from "@vue/reactivity";
 // const los = ref("");

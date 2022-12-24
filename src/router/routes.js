@@ -16,9 +16,14 @@ const routes = [
         children: [
             {
                 name: 'Home',
-                path: 'home/:id',
+                path: 'home',
                 component: () => import('@/view/home/index.vue'),
                 props: { newsletterPopup: false }
+            },
+            {
+                name: 'Test',
+                path: 'test',
+                component: () => import('@/view/test/index.vue'),
             }
         ]
     },
